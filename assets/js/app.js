@@ -6,7 +6,7 @@
 
 //some global variables
 addButtonId = ''; //The ID name for the button designated to add train schedule
-tableId =''; //The ID of the table where the train schedule is shown
+bodyTableId =''; //The ID of the table body where the train schedule is shown
 //formId =''; //The ID of the form used to collect the information about the train schedule
 trainNameInput = ''; //ID of the input text to collect the train name
 trainDestinationInput = ''; // id of the destination input text
@@ -43,7 +43,7 @@ $(document).ready( function() {
     
         var trainName = $( trainNameInput ).val().trim();
         var trainDestination = $( trainDestinationInput ).val().trim();
-        var trainFirstTime = $( trainFirstTimeInput ).val().trim();
+        var trainFirstTime = moment( $( trainFirstTimeInput ).val().trim(), 'MM/DD/YYYY' );
         var trainFrequency = $( trainFrequencyInput ).val().trim();
     
         fbTrainSchedule.ref().push( {
@@ -67,7 +67,23 @@ $(document).ready( function() {
 
     //Its triggers when a new child (element) to the database is added
     fbEmployees.ref().on( "child_added", function( snapshot ) {
-        
+        //get values from snapshot
+        var name = snapshot.val().name;
+        var dest = snapshot.val().destination;
+        var first = snapshot.val().first;
+        var freq = snapshot.val().frequency;
+        //calculated values
+        var nextArr;
+        var minAway;
+
+        //add data to the table
+        var row = $('<tr>').appendTo( $( bodyTableId ) );
+        $('<td>').text( name ).appendTo( row );
+        $('<td>').text( dest ).appendTo( row );
+        $('<td>').text( freq ).appendTo( row );
+        $('<td>').text( nextArr ).appendTo( row );
+        $('<td>').text( minAway ).appendTo( row );
+
     } );
 
 } );
