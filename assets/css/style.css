@@ -1,0 +1,18 @@
+#container {
+  margin: auto;
+}
+
+#jumboHeader {
+  color: white;
+  background-color: brown;
+}
+
+#cardHeader {
+  color: white;
+  background-color: #4a619a;
+}
+
+#submitBtn {
+  color: white;
+  background-color: #4a619a;
+}
