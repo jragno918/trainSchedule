@@ -17,15 +17,15 @@ trainFrequencyInput = ''; // id of the frequency input
 $(document).ready( function() {
 
     // Initialize Firebase
-    var databaseName = ''; //we need to fill this
+    var databaseName = "trainsystemhw"; 
 
     var config = {
-        apiKey: "", //we need to fill this
+        apiKey: "AIzaSyBdoJiMy_PFktLmrveH0A2nbbj8wtvur_o", 
         authDomain: databaseName + ".firebaseapp.com",
         databaseURL: "https://" + databaseName + ".firebaseio.com",
         projectId: databaseName,
         storageBucket: "",
-        messagingSenderId: "" //we need to fill this 
+        messagingSenderId: "695028065097" 
     };
 
     firebase.initializeApp(config);
