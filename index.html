@@ -18,6 +18,7 @@
 
     <div class="container">
 
+        <!-- Page heading, Jumbotron -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="jumbotron bg-dark text-white text-center">
@@ -26,6 +27,65 @@
                 </div>
             </div> <!-- end of column -->
         </div> <!-- end of row -->
+
+        <!-- Train Schedule, table inside a card -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card border-info">
+                    <div class="card-header bg-info">
+                        <strong>Current Train Schedule</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Destination</th>
+                                    <th>Frequency (min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Here is where the data from Firebase will be inserted -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div> <!-- end of card -->
+            </div> <!-- end of column -->
+        </div> <!-- end of row -->
+
+        <!-- Adding train, form inside a card -->
+        <div class="row my-4">
+                <div class="col-sm-12">
+                    <div class="card border-info">
+                        <div class="card-header bg-info">
+                            <strong>Add Train</strong>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="trainName-input">Train Name</label>
+                                    <input type="text" id="trainName-input" class="form-control" placeholder="Enter train name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination-input">Destination</label>
+                                    <input type="text" id="destination-input" class="form-control" placeholder="Enter destination">
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstTrain-input">First Train Time (HH:mm - military time)</label>
+                                    <input type="text" id="firstTrain-input" class="form-control" placeholder="Enter first train time">
+                                </div>
+                                <div class="form-group">
+                                    <label for="frequency-input">Frequency (min)</label>
+                                    <input type="text" id="frequency-input" class="form-control" placeholder="Enter train frequency in minutes">
+                                </div>
+                                <button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+                            </form>
+                        </div>
+                    </div> <!-- end of card -->
+                </div> <!-- end of column -->
+            </div> <!-- end of row -->
 
     </div> <!-- end of container -->
     
@@ -43,5 +103,8 @@
     <!-- Bootstrap 4.1.1 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <!-- Our own JS-->
+    <script> src="assets/js/app.js"</script>
 </body>
 </html>
