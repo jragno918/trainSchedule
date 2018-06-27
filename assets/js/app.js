@@ -70,10 +70,13 @@ $(document).ready( function() {
         var name = snapshot.val().name;
         var dest = snapshot.val().destination;
         var first = snapshot.val().first;
-        var freq = snapshot.val().frequency;
+        var freq = parseInt( snapshot.val().frequency );
         //calculated values
-        var nextArr;
-        var minAway;
+        var departureTimes = Math.abs( Math.ceil( moment( first, 'HH:mm').diff( moment(), 'minutes' ) / freq ) );
+        console.log(departureTimes);
+        var na = moment( first, 'HH:mm').add( ((departureTimes+1) * freq), 'minutes' );
+        var nextArr = moment( na, 'HH:mm' ).format('hh:mm a');
+        var minAway = moment( na, 'HH:mm' ).diff( moment(), 'minutes') + 1;
 
         //add data to the table
         var row = $('<tr>').appendTo( $( bodyTableId ) );
