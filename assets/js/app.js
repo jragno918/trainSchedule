@@ -5,13 +5,13 @@
 */
 
 //some global variables
-addButtonId = ''; //The ID name for the button designated to add train schedule
-bodyTableId =''; //The ID of the table body where the train schedule is shown
+addButtonId = '#btnSubmit'; //The ID name for the button designated to add train schedule
+bodyTableId ='#tableBody'; //The ID of the table body where the train schedule is shown
 //formId =''; //The ID of the form used to collect the information about the train schedule
-trainNameInput = ''; //ID of the input text to collect the train name
-trainDestinationInput = ''; // id of the destination input text
-trainFirstTimeInput = ''; // id of the first time input
-trainFrequencyInput = ''; // id of the frequency input
+trainNameInput = '#trainName-input'; //ID of the input text to collect the train name
+trainDestinationInput = '#destination-input'; // id of the destination input text
+trainFirstTimeInput = '#firstTrain-input'; // id of the first time input
+trainFrequencyInput = '#frequency-input'; // id of the frequency input
 
 //It will start when the document will finish to load
 $(document).ready( function() {
@@ -40,11 +40,18 @@ $(document).ready( function() {
     //Function for adding a train to the database
     function addTrain( event ) {
         event.preventDefault();
+
+        console.log('Adding train...');
     
         var trainName = $( trainNameInput ).val().trim();
         var trainDestination = $( trainDestinationInput ).val().trim();
-        var trainFirstTime = moment( $( trainFirstTimeInput ).val().trim(), 'MM/DD/YYYY' );
+        var trainFirstTime = moment( $( trainFirstTimeInput ).val().trim(), 'hh:mm a' ).format('HH:mm');
         var trainFrequency = $( trainFrequencyInput ).val().trim();
+
+        console.log( trainName );
+        console.log( trainDestination );
+        console.log( trainFirstTime );
+        console.log( trainFrequency );
     
         fbTrainSchedule.ref().push( {
             name: trainName,
@@ -66,15 +73,18 @@ $(document).ready( function() {
     }
 
     //Its triggers when a new child (element) to the database is added
-    fbEmployees.ref().on( "child_added", function( snapshot ) {
+    fbTrainSchedule.ref().on( "child_added", function( snapshot ) {
         //get values from snapshot
         var name = snapshot.val().name;
         var dest = snapshot.val().destination;
         var first = snapshot.val().first;
-        var freq = snapshot.val().frequency;
+        var freq = parseInt( snapshot.val().frequency );
         //calculated values
-        var nextArr;
-        var minAway;
+        var departureTimes = Math.abs( Math.ceil( moment( first, 'HH:mm').diff( moment(), 'minutes' ) / freq ) );
+        console.log(departureTimes);
+        var na = moment( first, 'HH:mm').add( ((departureTimes+1) * freq), 'minutes' );
+        var nextArr = moment( na, 'HH:mm' ).format('hh:mm a');
+        var minAway = moment( na, 'HH:mm' ).diff( moment(), 'minutes') + 1;
 
         //add data to the table
         var row = $('<tr>').appendTo( $( bodyTableId ) );
