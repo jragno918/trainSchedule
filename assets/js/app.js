@@ -5,13 +5,12 @@
 */
 
 //some global variables
-addButtonId = ''; //The ID name for the button designated to add train schedule
-bodyTableId =''; //The ID of the table body where the train schedule is shown
-//formId =''; //The ID of the form used to collect the information about the train schedule
-trainNameInput = ''; //ID of the input text to collect the train name
-trainDestinationInput = ''; // id of the destination input text
-trainFirstTimeInput = ''; // id of the first time input
-trainFrequencyInput = ''; // id of the frequency input
+addButtonId = 'submitBtn'; //The ID name for the button designated to add train schedule
+bodyTableId ='tableBody'; //The ID of the table body where the train schedule is shown
+trainNameInput = 'trainName'; //ID of the input text to collect the train name
+trainDestinationInput = 'destination'; // id of the destination input text
+trainFirstTimeInput = 'firstTrain'; // id of the first time input
+trainFrequencyInput = 'frequency'; // id of the frequency input
 
 //It will start when the document will finish to load
 $(document).ready( function() {
