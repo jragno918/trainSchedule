@@ -5,26 +5,26 @@
 */
 
 //some global variables
-addButtonId = 'submitBtn'; //The ID name for the button designated to add train schedule
-bodyTableId ='tableBody'; //The ID of the table body where the train schedule is shown
-trainNameInput = 'trainName'; //ID of the input text to collect the train name
-trainDestinationInput = 'destination'; // id of the destination input text
-trainFirstTimeInput = 'firstTrain'; // id of the first time input
-trainFrequencyInput = 'frequency'; // id of the frequency input
+addButtonId = '#submitBtn'; //The ID name for the button designated to add train schedule
+bodyTableId ='#tableBody'; //The ID of the table body where the train schedule is shown
+trainNameInput = '#trainName'; //ID of the input text to collect the train name
+trainDestinationInput = '#destination'; // id of the destination input text
+trainFirstTimeInput = '#firstTrain'; // id of the first time input
+trainFrequencyInput = '#frequency'; // id of the frequency input
 
 //It will start when the document will finish to load
 $(document).ready( function() {
 
     // Initialize Firebase
-    var databaseName = ''; //we need to fill this
+    var databaseName = 'trainsystemhw'; //we need to fill this
 
     var config = {
-        apiKey: "", //we need to fill this
+        apiKey: "AIzaSyBdoJiMy_PFktLmrveH0A2nbbj8wtvur_o", //we need to fill this
         authDomain: databaseName + ".firebaseapp.com",
         databaseURL: "https://" + databaseName + ".firebaseio.com",
         projectId: databaseName,
         storageBucket: "",
-        messagingSenderId: "" //we need to fill this 
+        messagingSenderId: "695028065097" //we need to fill this 
     };
 
     firebase.initializeApp(config);
