@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="jumbotron" style="color: white; background-color: #6d532b; text-align: center;">
+          <h1>Anytime is Train Time</h1>
+          <p>Choo Choo. Chee Chee</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card" style="border-color: #2c75c3;">
+          <div class="card-header" style="background-color: #2c75c3; color: white;">
+            <strong>Current Train Schedule</strong>
+          </div>
+          <div class="card-body">
+            <table class="table ">
+              <thead>
+                <tr>
+                  <th>Train Name</th>
+                  <th>Destination</th>
+                  <th>Frequency (min)</th>
+                  <th>Next Arrival</th>
+                  <th>Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- Here is where the data from Firebase will be inserted -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mt-4 mb-4">
+      <div class="col-lg-12">
+        <div class="card" style="border-color: #2c75c3;">
+          <div class="card-header" style="background-color: #2c75c3; color: white;">
+            <strong>Add Train</strong>
+          </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="train-name">Train Name</label>
+                <input type="text" class="form-control" id="trainName">
+              </div>
+              <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination">
+              </div>
+              <div class="form-group">
+                <label for="first-train">First Train Time (HH:mm)</label>
+                <input type="time" class="form-control" id="firstTrain">
+              </div>
+              <div class="form-group">
+                <label for="frequency">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn" id="submitBtn" style="color: white; background-color: #2c75c3;">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
