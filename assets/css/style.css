@@ -1,18 +1,19 @@
-#container {
-  margin: auto;
-}
-
 #jumboHeader {
   color: white;
-  background-color: brown;
+  background-color: #6d532b;
+  text-align: center;
+}
+
+#card {
+  border-color: #2c75c3;
 }
 
 #cardHeader {
   color: white;
-  background-color: #4a619a;
+  background-color: #2c75c3;
 }
 
 #submitBtn {
   color: white;
-  background-color: #4a619a;
+  background-color: #2c75c3;
 }
