@@ -65,7 +65,7 @@ $(document).ready( function() {
     }
 
     //Its triggers when a new child (element) to the database is added
-    fbEmployees.ref().on( "child_added", function( snapshot ) {
+    fbTrainSchedule.ref().on( "child_added", function( snapshot ) {
         //get values from snapshot
         var name = snapshot.val().name;
         var dest = snapshot.val().destination;
