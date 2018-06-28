@@ -7,7 +7,7 @@ We did this project as a group. The members are:
 <ul>
   <li> Joseph Ragno </li>
   <li> Jose De las Salas </li>
-  <li> Raul </li>
+  <li> Raul Tablada</li>
   <li> Joed Machado </li>
 </ul> 
 
