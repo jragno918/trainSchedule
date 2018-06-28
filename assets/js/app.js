@@ -42,7 +42,7 @@ $(document).ready( function() {
     
         var trainName = $( trainNameInput ).val().trim();
         var trainDestination = $( trainDestinationInput ).val().trim();
-        var trainFirstTime = moment( $( trainFirstTimeInput ).val().trim(), 'MM/DD/YYYY' );
+        var trainFirstTime = moment( $( trainFirstTimeInput ).val().trim(), 'MM/DD/YYYY' ).format('HH:mm');
         var trainFrequency = $( trainFrequencyInput ).val().trim();
     
         fbTrainSchedule.ref().push( {
